@@ -1,16 +1,16 @@
 <template>
   
-  <div class="title-backer">
+  <!-- <div class="title-backer">
     <h1>Eli T. Drumm</h1>
-  </div>
-  
+  </div> -->
+  <transition name="home-nav-t">
   <nav id="home-nav">
     <ul>
       <li><h2><router-link to="/about">about</router-link></h2></li>
       <li><h2><router-link to="/yield">portfolio</router-link></h2></li>
     </ul>
   </nav>
-  
+  </transition>
 </template>
 
 <script>
@@ -27,12 +27,12 @@ h1 {
   position: absolute;
 
   //transform: rotate(-6deg) skewX(-6deg) translate(8rem,23rem);
-  transform: skewY(-3deg) translateY(38rem);
+
   @media (max-width: 2200px) {
-    transform: skewY(-3deg) translateY(22rem);
+
   }
   @media (max-width: 1400px) {
-    transform: skewY(-3deg) translateY(8rem);
+
   }
   @media (max-width: 1100px) {
     font-size: 12rem;
@@ -52,9 +52,10 @@ h1 {
   /* transform: translateY(10rem); */
   /* transform: skewY(10deg); */
 
-  
+  height: 32rem;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 60%);  
 
-  transform: skewY(3deg) translateY(-30rem);
+  /* transform: skewY(3deg) translateY(-30rem);
   height: 60rem;
   margin-bottom: -300px;
   
@@ -70,7 +71,7 @@ h1 {
     height: 30rem;
     margin-bottom: -20px;
   }
-  
+   */
   
 
   background-color: #040404;
@@ -86,5 +87,10 @@ nav {
       text-decoration: none;
     }
   }
+}
+
+.home-nav-t-enter-active,
+.home-nav-t-exit-active {
+  
 }
 </style>

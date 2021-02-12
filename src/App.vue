@@ -1,5 +1,5 @@
 <template>
-  <top-nav v-if="$route.name !== 'Home'" />
+  <top-nav />
 
   <router-view />
 </template>
