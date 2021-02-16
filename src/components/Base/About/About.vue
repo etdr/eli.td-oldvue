@@ -28,7 +28,9 @@ ul {
   padding-inline-start: 0;
   padding: 2rem;
   justify-content: space-around;
-  align-items: center;
+  align-items: top;
+  height: 3rem;
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
 
   & li {
     
@@ -37,6 +39,7 @@ ul {
       text-decoration: none;
       font-weight: bold;
       transition: all .4s ease;
+      font-size: 2rem;
       &:hover {
         color: #040404;
       }
@@ -46,13 +49,13 @@ ul {
 
 
 
-:deep() .about-subtitle {
+:deep() h1 {
   font-style: italic;
 }
 
 main {
   width: 100rem;
-  margin: 0 auto;
+  margin: 2rem auto 0;
 
   & .content {
     width: 80rem;

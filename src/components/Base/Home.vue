@@ -7,7 +7,7 @@
   <nav id="home-nav">
     <ul>
       <li><h2><router-link to="/about">about</router-link></h2></li>
-      <li><h2><router-link to="/yield">portfolio</router-link></h2></li>
+      <li><h2><router-link to="/is-a">portfolio</router-link></h2></li>
     </ul>
   </nav>
   </transition>

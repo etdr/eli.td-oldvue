@@ -8,17 +8,16 @@
     <li><router-link to="/is-a/musician">Music</router-link></li>
   </ul>
 
+  
   <main>
-    <p>Eli T. Drumm is a</p>
+    <p v-if="$route.name !== 'Portfolio Summary'">Eli T. Drumm is a</p>
     <router-view />
   </main>
 
 </template>
 
 <script>
-export default {
 
-}
 </script>
 
 <style lang="postcss" scoped>
@@ -31,7 +30,15 @@ ul {
   padding-inline-start: 0;
   padding: 2rem;
   justify-content: space-around;
-  align-items: center;
+  align-items: top;
+  height: 4rem;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 70%);
+  transition: all .4s ease;
+
+  &:hover {
+    height: 6rem;
+    clip-path: polygon(0 0, 100% 0, 100% 60%, 0 100%);
+  }
 
   & li {
     
@@ -40,6 +47,7 @@ ul {
       text-decoration: none;
       font-weight: bold;
       transition: all .4s ease;
+      font-size: 2rem;
       &:hover {
         color: #040404;
       }

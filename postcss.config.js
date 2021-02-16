@@ -1,3 +1,5 @@
+console.log('reading postcss config')
+
 module.exports = {
   plugins: {
     'autoprefixer': {},
@@ -5,3 +7,4 @@ module.exports = {
     'postcss-extend': {}
   }
 }
+

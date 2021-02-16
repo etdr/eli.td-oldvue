@@ -10,6 +10,32 @@ import Contact from './components/Base/Contact.vue'
 
 import Portfolio from './components/Portfolio/Portfolio.vue'
 
+import Posts from './components/Posts/Posts.vue'
+import Index from './components/Posts/Index.vue'
+import Post from './components/Posts/Post.vue'
+const posts = import.meta.glob('./posts/*.md')
+
+let processedPosts = Object.entries(posts).map(([p, loadfunc]) => {
+  const path = p.match(/20[0-9]{2}-[0-1][0-9]-[0-3][0-9]/)[0]
+  return {
+    path,
+    name: path,
+    // component: async () => {
+    //   const x = await loadfunc()
+    //   console.log(x)
+    //   return x.VueComponent
+    // },
+    component: Post,
+    props: {
+      name: path,
+      loadfunc
+    }
+  }
+})
+
+
+
+
 const routes = [
   {
     path: '/',
@@ -66,6 +92,11 @@ const routes = [
     component: Portfolio,
     children: [
       {
+        path: '',
+        name: 'Portfolio Summary',
+        component: () => import('./components/Portfolio/Summary.vue')
+      },
+      {
         path: 'web-developer',
         name: 'Web',
         component: () => import('./components/Portfolio/Web.vue')
@@ -95,6 +126,22 @@ const routes = [
         name: 'Music',
         component: () => import('./components/Portfolio/Music.vue')
       }
+    ]
+  },
+  {
+    path: '/posts',
+    name: 'Posts',
+    component: Posts,
+    children: [
+      {
+        path: '',
+        name: 'Posts Index',
+        component: Index,
+        props: {
+          postlist: processedPosts.map(p => p.name)
+        }
+      },
+      ...processedPosts
     ]
   }
 ]

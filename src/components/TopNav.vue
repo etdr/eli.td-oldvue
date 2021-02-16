@@ -2,7 +2,7 @@
   
   <nav :class="{'on-home': onHome}">
     <ul :class="{'on-home': onHome}">
-      <li><router-link to="/" class="link-to-home">Eli T. Drumm</router-link></li>
+      <li><router-link to="/" class="link-to-home">Eli <span class="middle-and-surname">T. Drumm</span></router-link></li>
       <li><router-link to="/about" class="link-to-about">about</router-link></li>
       <li><router-link to="/is-a" class="link-to-portfolio">portfolio</router-link></li>
       <li><router-link to="/posts" class="link-to-posts">posts</router-link></li>
@@ -31,7 +31,7 @@ export default {
 
 <style lang="postcss" scoped>
 nav {
-
+  font-family: 'Merriweather', serif;
   height: 10rem;
 
   &.on-home {
@@ -45,7 +45,7 @@ nav {
     height: 32rem;
     background-color: #040404;
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-    transition: clip-path 1s ease;
+    transition: all 1s ease;
 
     & h1 {
       color: #f8f8f8;
@@ -67,6 +67,11 @@ nav {
     /* clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); */
     transition: all 1s ease;
     height: 10rem;
+
+    &:hover {
+      height: 12rem;
+      /* clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%); */
+    }
 
     @media (max-width: 600px) {
       height: 24rem;
@@ -90,6 +95,11 @@ nav {
         transition: all .4s ease;
 
         &.link-to-home {
+          & .middle-and-surname {
+            @media (max-width: 800px) {
+              display: none;
+            }
+          }
         }
 
         &.link-to-about:hover {
