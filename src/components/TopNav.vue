@@ -1,7 +1,7 @@
 <template>
   
   <nav :class="{'on-home': onHome}">
-    <ul :class="{'on-home': onHome}">
+    <ul :class="{'shown': !onHome}">
       <li><router-link to="/" class="link-to-home">Eli <span class="middle-and-surname">T. Drumm</span></router-link></li>
       <li><router-link to="/about" class="link-to-about">about</router-link></li>
       <li><router-link to="/is-a" class="link-to-portfolio">portfolio</router-link></li>
@@ -21,9 +21,6 @@ export default {
   computed: {
     onHome () {
       return this.$route.name === 'Home' 
-    },
-    h1Shown () {
-      return this.$route.name !== 'Home'
     }
   }
 }
@@ -37,6 +34,10 @@ nav {
   &.on-home {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 60%);
     height: 32rem;
+  }
+
+  @media (max-width: 600px) {
+    height: 20rem;
   }
 
   margin: 0;
@@ -55,13 +56,13 @@ nav {
     }
   }
 
-  & .shown {
+  & div.shown {
     
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 60%);
     
   }
 
-  & ul {
+  & ul.shown {
     margin: 0;
     background-color: #040404;
     /* clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); */
@@ -74,7 +75,7 @@ nav {
     }
 
     @media (max-width: 600px) {
-      height: 24rem;
+      height: 20rem;
     }
 
     color: #f8f8f8;
@@ -127,33 +128,6 @@ nav {
   }
 
   
-}
-
-
-
-.home-topnav-enter-from {
-  
-}
-
-.home-big-name-enter-active,
-.home-big-name-exit-active {
-  
-}
-
-.home-big-name-enter-from {
-  height: 0;
-}
-
-.home-big-name-enter-to {
-  height: 32rem;
-}
-
-.home-big-name-exit-from {
-  height: 32rem;
-}
-
-.home-big-name-exit-to {
-  height: 0;
 }
 
 </style>

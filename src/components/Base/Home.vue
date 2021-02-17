@@ -26,11 +26,11 @@ h1 {
   padding: 1rem 0 4rem;
   position: absolute;
 
-  //transform: rotate(-6deg) skewX(-6deg) translate(8rem,23rem);
+  /* transform: rotate(-6deg) skewX(-6deg) translate(8rem,23rem); */
 
-  @media (max-width: 2200px) {
+  /* @media (max-width: 2200px) {
 
-  }
+  } */
   @media (max-width: 1400px) {
 
   }

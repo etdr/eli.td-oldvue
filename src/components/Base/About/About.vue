@@ -31,6 +31,12 @@ ul {
   align-items: top;
   height: 3rem;
   clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+  transition: all .4s ease;
+
+  &:hover {
+    height: 4rem;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 70%);
+  }
 
   & li {
     
@@ -54,14 +60,8 @@ ul {
 }
 
 main {
-  width: 100rem;
-  margin: 2rem auto 0;
+  
 
-  & .content {
-    width: 80rem;
-    margin: 0 auto;
-
-  }
 }
 
 </style>
