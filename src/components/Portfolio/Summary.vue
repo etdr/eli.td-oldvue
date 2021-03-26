@@ -6,7 +6,6 @@
 </template>
 
 <script>
-import { onUnmounted } from 'vue'
 import whatIAm from '../../assets/content/portfolio/what-I-am.json'
 
 export default {
@@ -40,6 +39,14 @@ export default {
 }
 </script>
 
-<style>
+<style lang="postcss" scoped>
+p {
+  margin: 10rem 0 0;
+  font-style: italic;
+}
 
+h1 {
+  margin: 0;
+  font-size: 10rem;
+}
 </style>

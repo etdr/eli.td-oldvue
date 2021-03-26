@@ -1,7 +1,7 @@
 <template>
   
   <nav :class="{'on-home': onHome}">
-    <ul :class="{'shown': !onHome}">
+    <ul :class="{'shown': !onHome, 'on-home': onHome}">
       <li><router-link to="/" class="link-to-home">Eli <span class="middle-and-surname">T. Drumm</span></router-link></li>
       <li><router-link to="/about" class="link-to-about">about</router-link></li>
       <li><router-link to="/is-a" class="link-to-portfolio">portfolio</router-link></li>
@@ -9,7 +9,7 @@
     </ul>
     
     
-    <div class="title-backer" :class="{shown: onHome}">
+    <div :class="{shown: onHome, 'title-backer': true}">
       <h1>Eli T. Drumm</h1>
     </div>
     
@@ -61,6 +61,18 @@ nav {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 60%);
     
   }
+
+
+  & ul {
+    transition: all .4s ease;
+  }
+
+  & ul.on-home {
+      height: 0;
+      margin: 0;
+      display: none;
+      
+    }  
 
   & ul.shown {
     margin: 0;
@@ -122,9 +134,7 @@ nav {
       }
     }
 
-    &.on-home {
-      height: 0;
-    }  
+    
   }
 
   
