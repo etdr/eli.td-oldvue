@@ -5,7 +5,7 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "deploy": "rsync -rav ./dist/ gyr:sites/eli.td"
+    "deploy": "rsync -rav ./dist/ ivo:sites/eli.td"
   },
   "dependencies": {
     "markdown-it-attrs": "^4.0.0",
